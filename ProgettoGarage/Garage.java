@@ -1,7 +1,9 @@
 package ProgettoGarage;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class Garage {
     
@@ -26,6 +28,12 @@ public class Garage {
 
             return "Capacità massima raggiunta. Auto non entrata";
         }
+    }
+
+    public void eseguiTagliando(Auto auto) {
+        Objects.requireNonNull(auto, "L'auto è obbligatoria.");
+         System.out.println("TagliandoEffettuato");
+         
     }
 
     public Auto autoEsce(){

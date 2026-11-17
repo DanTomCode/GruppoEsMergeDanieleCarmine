@@ -43,14 +43,13 @@ public class Garage {
         System.out.println("Auto uscita");
     }
 
-    public Auto lavoraSuProssimaAuto(){
+    public void lavoraSuProssimaAuto(){
 
         Auto autoCorrente;
 
         if(autoNelGarage.isEmpty()){
 
             System.out.println("Garage vuoto");
-            return null;
         }
         else{
 
@@ -83,7 +82,7 @@ public class Garage {
                 break;
         }
 
-
+        autoEsce(autoCorrente);
     }
 
     public void eseguiDiagnosticaElettronica(Auto auto) {
@@ -98,5 +97,10 @@ public class Garage {
     private Auto riparazioneAuto(Auto auto){
 
         System.out.println("Auto riparata");
+    }
+
+    private void cambiaPneumatici(Auto autoCorrente){
+
+        System.out.println("Ruote cambiate");
     }
 }

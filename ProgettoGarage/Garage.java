@@ -21,6 +21,7 @@ public class Garage {
         if(capacita > 0){
 
             autoNelGarage.add(a);
+            capacita -= 1;
 
             return "Auto entrata";
         }
@@ -39,6 +40,7 @@ public class Garage {
     public void autoEsce(Auto autoCorrente){
 
         autoNelGarage.remove(autoCorrente);
+        capacita += 1;
 
         System.out.println("Auto uscita");
     }

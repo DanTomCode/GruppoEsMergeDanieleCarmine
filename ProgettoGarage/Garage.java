@@ -36,16 +36,58 @@ public class Garage {
          
     }
 
-    public Auto autoEsce(){
+    public void autoEsce(Auto autoCorrente){
 
-        if(!autoNelGarage.isEmpty()){
+        autoNelGarage.remove(autoCorrente);
 
-            return autoNelGarage.removeFirst();
+        System.out.println("Auto uscita");
+    }
+
+    public Auto lavoraSuProssimaAuto(){
+
+        Auto autoCorrente;
+
+        if(autoNelGarage.isEmpty()){
+
+            System.out.println("Garage vuoto");
+            return null;
         }
         else{
 
-            return null;
+            autoCorrente = autoNelGarage.getFirst();
         }
+
+        switch (autoCorrente.getOperazione()) {
+            
+            case Operazione.TAGLIANDO:
+                
+                this.eseguiTagliando(autoCorrente);
+                break;
+        
+            case Operazione.RIPARAZIONI_MECCANICHE:
+
+                this.riparazioneAuto(autoCorrente);
+                break;
+
+            case Operazione.DIAGNOSTICA_ELETTRONICA:
+
+                this.diagnosticaEettronica(autoCorrente);
+                break;
+
+            case Operazione.PNEUMATICI:
+
+                this.cambiaPneumatici(autoCorrente);
+                break;
+
+            default:
+                break;
+        }
+
+
     }
 
+    private Auto riparazioneAuto(Auto auto){
+
+        System.out.println("Auto riparata");
+    }
 }

@@ -95,7 +95,7 @@ public class Garage {
         System.out.println("Diagnostica elettronica completata per l'auto " + auto.getTarga());
     }
 
-    private Auto riparazioneAuto(Auto auto){
+    private void riparazioneAuto(Auto auto){
 
         System.out.println("Auto riparata");
     }

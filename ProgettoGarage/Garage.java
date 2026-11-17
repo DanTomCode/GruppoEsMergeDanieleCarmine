@@ -59,22 +59,22 @@ public class Garage {
 
         switch (autoCorrente.getOperazione()) {
             
-            case Operazione.TAGLIANDO:
+            case TAGLIANDO:
                 
                 this.eseguiTagliando(autoCorrente);
                 break;
         
-            case Operazione.RIPARAZIONI_MECCANICHE:
+            case RIPARAZIONI_MECCANICHE:
 
                 this.riparazioneAuto(autoCorrente);
                 break;
 
-            case Operazione.DIAGNOSTICA_ELETTRONICA:
+            case DIAGNOSTICA_ELETTRONICA:
 
-                this.diagnosticaEettronica(autoCorrente);
+                this.eseguiDiagnosticaElettronica(autoCorrente);
                 break;
 
-            case Operazione.PNEUMATICI:
+            case PNEUMATICI:
 
                 this.cambiaPneumatici(autoCorrente);
                 break;
@@ -84,6 +84,15 @@ public class Garage {
         }
 
 
+    }
+
+    public void eseguiDiagnosticaElettronica(Auto auto) {
+        Objects.requireNonNull(auto, "L'auto è obbligatoria.");
+        if (auto.getOperazione() != Operazione.DIAGNOSTICA_ELETTRONICA) {
+            throw new IllegalArgumentException(
+                    "L'operazione dell'auto deve essere DIAGNOSTICA_ELETTRONICA.");
+        }
+        System.out.println("Diagnostica elettronica completata per l'auto " + auto.getTarga());
     }
 
     private Auto riparazioneAuto(Auto auto){

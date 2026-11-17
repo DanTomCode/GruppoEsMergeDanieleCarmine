@@ -50,6 +50,7 @@ public class Garage {
         if(autoNelGarage.isEmpty()){
 
             System.out.println("Garage vuoto");
+            return;
         }
         else{
 
